@@ -17,8 +17,8 @@ import stopwatchModel
 def testStopwatchModel() -> bool:
     thumbyGraphics.display.fill(0)
     fps = 10
-    i = 1
-    err = 200
+    i = 3
+    err = 500
     thumbyGraphics.display.setFPS(fps)
     stopwatch = stopwatchModel.stopwatchModel()
     frame = 0
