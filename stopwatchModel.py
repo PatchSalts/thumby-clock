@@ -3,9 +3,10 @@
 # Classes implementing a stopwatch.
 
 # Written by Patch Salts.
-# Last edited 05/31/2024
+# Last edited 06/03/2024
 
 import time
+import baseState
 
 class stopwatchModel:
     """Class for operating a stopwatch.
@@ -57,7 +58,7 @@ class stopwatchModel:
         if newState is not None:
             self.transition(newState)
 
-class stopwatchModelState:
+class stopwatchModelState(baseState.baseState):
     """Base class for states for stopwatchModel.
     
     Attributes:
@@ -69,15 +70,7 @@ class stopwatchModelState:
         Parameters:
             model (stopwatchModel): The model this state is attached to.
         """
-        self.model = model
-
-    def enter(self):
-        """Run setup actions when entering state."""
-        pass
-
-    def exit(self):
-        """Run cleanup actions when exiting state."""
-        pass
+        super().__init__(model)
 
     def update(self) -> stopwatchModelState:
         """Update the model.
